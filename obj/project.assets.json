@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\Programme\\Git\\WindowsFormsApp\\Calculator-Tutorial\\Calculator-Tutorial.csproj",
+      "projectUniqueName": "F:\\Programme\\Git\\Calculator-Tutorial\\Calculator-Tutorial.csproj",
       "projectName": "Calculator-Tutorial",
-      "projectPath": "F:\\Programme\\Git\\WindowsFormsApp\\Calculator-Tutorial\\Calculator-Tutorial.csproj",
+      "projectPath": "F:\\Programme\\Git\\Calculator-Tutorial\\Calculator-Tutorial.csproj",
       "packagesPath": "C:\\Users\\thebi\\.nuget\\packages\\",
-      "outputPath": "F:\\Programme\\Git\\WindowsFormsApp\\Calculator-Tutorial\\obj\\",
+      "outputPath": "F:\\Programme\\Git\\Calculator-Tutorial\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
