@@ -20,23 +20,26 @@ namespace Calculator
 
             // User Story: As a user I want to have a function that can do a calculation
             // first Iteration is to implement addition (+) of two or more numbers (make a SUM)
+
             Console.Write("Please enter first number:");
             string firstNumber = Console.ReadLine();
             Console.Write("Please enter second number:");
             string secondNumber = Console.ReadLine();
 
             // convert string to int for calculation
-            int firstNumberInt = Convert.ToInt32(firstNumber);
-            int secondNumberInt = Convert.ToInt32(secondNumber);
+            float firstNumberF = Convert.ToSingle(firstNumber);
+            float secondNumberF = Convert.ToSingle(secondNumber);
 
             // calculates sum of two numbers
-            int sum = firstNumberInt + secondNumberInt;
+            float sum = firstNumberF + secondNumberF;
 
             // return value of calculation
             Console.WriteLine("The solution is: {0}", sum);
             Console.ReadLine();
+
             
         }
+
 
     }
 
