@@ -22,40 +22,67 @@ namespace Calculator
             // User Story: As a user I want to have a function that can do a calculation
             // first Iteration is to implement addition (+) of two or more numbers (make a SUM)
 
-            Console.Write("Please enter first number: ");
-            string firstNumber = Console.ReadLine();
-            Console.Write("Please enter second number: ");
-            string secondNumber = Console.ReadLine();
+            string firstNumber = GetUserInput("Please enter the first number: ");
+            string secondNumber = GetUserInput("Please enter the second number: ");
+            string enterOperator = GetUserInput("please enter an operator (+ or -): ");
 
             // convert string to int for calculation
+            // TODO: create new method when code gets bigger.
             double firstNumberD = Convert.ToDouble(firstNumber);
             double secondNumberD = Convert.ToDouble(secondNumber);
 
-            // calculates sum of two numbers
-            double sum = AddWithSum(firstNumberD, secondNumberD);
+            
+            // calculates result of two numbers
+            double result = 0;
+            if (enterOperator == "+")
+            {
+                result = AddWithSum(firstNumberD, secondNumberD);
+                Console.WriteLine("The sum is: {0}", result);
 
-            // return value of calculation in Console
-            Console.WriteLine("The solution is: {0}", sum);
-            WaitForUserInput();
+            }
+            else if (enterOperator == "-")
+            { 
+                
+                result = SubstractNumbers(firstNumberD, secondNumberD);
+                Console.WriteLine("The difference is: {0}", result);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Input of operator");
+            }
+
                      
+            // return value of calculation in Console           
+            GetUserInput("Press return to quit.");
+                     
+                       
+        }
 
-           
+
+
+        static double SubstractNumbers(double firstNumber, double secondNumber)
+        {
+            double result = firstNumber - secondNumber;
+            return result;
+        }
+
+
+        static string GetUserInput(string Consoletext)
+        {
+
+            Console.Write(Consoletext);
+            string numberCalg = Console.ReadLine();
+
+
+            return numberCalg;
         }
 
         static double AddWithSum(double firstNumber, double secondNumber)
         {
-            double sum = firstNumber + secondNumber;
-            return sum;
+            double result = firstNumber + secondNumber;
+            return result;
         }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        static void WaitForUserInput()
-        {
-            Console.Write("Press return to quit.");
-            Console.ReadLine();
-        }
+            
 
 
     }
