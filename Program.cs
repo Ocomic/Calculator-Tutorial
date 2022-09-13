@@ -31,56 +31,80 @@ namespace Calculator
             double firstNumberD = Convert.ToDouble(firstNumber);
             double secondNumberD = Convert.ToDouble(secondNumber);
 
-            
+
             // calculates result of two numbers with different cases of operations
-            double result = 0;
-            switch (enterOperator)
-            {
-                case "+":
-                result = AddWithSum(firstNumberD, secondNumberD);
-                Console.WriteLine("The result of addition is: {0}", result);
-                break;
+            double result = calculation(firstNumberD, secondNumberD, enterOperator);
 
-                case "-":
-                result = SubtractNumbers(firstNumberD, secondNumberD);
-                Console.WriteLine("The result of subtraction is: {0}", result);
-                break;
+            // result Output
+            ResultOutput(result, enterOperator);
 
-                case "*":
-                result = MultiplicateNumbers(firstNumberD, secondNumberD);
-                Console.WriteLine("The result of multiplication is: {0}", result);
-                break;
 
-                case "/":
-                result = DivideNumbers(firstNumberD, secondNumberD);
-                ResultOutput("The result of the divided numbers is: {0}");
-                break;
 
-                default:
-                Console.WriteLine("Invalid Input of operator");
-                    break;
-            }
-            
-            
-
-                     
             // return value of calculation in Console           
             GetUserInput("Press return to quit.");
-                     
-                       
+
+
         }
 
         //add method for calculation here
 
-
-        //add mehtod for result output here
-
-        static string ResultOutput (string ConsoleOutputResult)
+        static double calculation(double firstNumberD, double secondNumberD, string enterOperator)
         {
-            
-            Console.WriteLine(string ConsoleOutputResult, result);
+            double result = 0;
+            switch (enterOperator)
+            {
+                case "+":
+                    result = AddWithSum(firstNumberD, secondNumberD);
+                    break;
 
-            return;
+                case "-":
+                    result = SubtractNumbers(firstNumberD, secondNumberD);
+                    break;
+
+                case "*":
+                    result = MultiplicateNumbers(firstNumberD, secondNumberD);
+                    break;
+
+                case "/":
+                    result = DivideNumbers(firstNumberD, secondNumberD);
+                    break;
+
+                
+            }
+
+            return result;
+
+        }
+        
+                
+    //add mehtod for result output here
+
+    static void ResultOutput(double result, string enterOperator)
+        {
+            switch (enterOperator)
+            {
+
+                case "+":
+                    Console.WriteLine("The result of the addition is: {0}", result);
+                    break;
+
+                case "-":
+                    Console.WriteLine("The result of the subtraction is: {0}", result);
+                    break;
+
+                case "*":
+                    Console.WriteLine("The result of the multiplication is: {0}", result);
+                    break;
+
+                case "/":
+                    Console.WriteLine("The result of the division is: {0}", result);
+                    break;
+
+                default:
+                    Console.WriteLine("Invalid Input of operator");
+                    break;
+
+            }
 
         }
 
@@ -110,7 +134,7 @@ namespace Calculator
 
         static double MultiplicateNumbers(double firstNumber, double secondNumber)
         {
-            double result = firstNumber + secondNumber;
+            double result = firstNumber * secondNumber;
             return result;
         }
 
