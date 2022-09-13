@@ -34,22 +34,34 @@ namespace Calculator
             
             // calculates result of two numbers
             double result = 0;
-            if (enterOperator == "+")
+            switch (enterOperator)
             {
+                case "+":
                 result = AddWithSum(firstNumberD, secondNumberD);
-                Console.WriteLine("The sum is: {0}", result);
+                Console.WriteLine("The result of addition is: {0}", result);
+                break;
 
-            }
-            else if (enterOperator == "-")
-            { 
-                
+                case "-":
                 result = SubstractNumbers(firstNumberD, secondNumberD);
-                Console.WriteLine("The difference is: {0}", result);
-            }
-            else
-            {
+                Console.WriteLine("The result of subtraction is: {0}", result);
+                break;
+
+                case "*":
+                result = MultiplicateNumbers(firstNumberD, secondNumberD);
+                Console.WriteLine("The result of multiplication is: {0}", result);
+                break;
+
+                case "/":
+                result = DivideNumbers(firstNumberD, secondNumberD);
+                Console.WriteLine("The result of division is: {0}", result);
+                break;
+
+                default:
                 Console.WriteLine("Invalid Input of operator");
+                    break;
             }
+            
+            
 
                      
             // return value of calculation in Console           
@@ -58,13 +70,6 @@ namespace Calculator
                        
         }
 
-
-
-        static double SubstractNumbers(double firstNumber, double secondNumber)
-        {
-            double result = firstNumber - secondNumber;
-            return result;
-        }
 
 
         static string GetUserInput(string Consoletext)
@@ -82,6 +87,28 @@ namespace Calculator
             double result = firstNumber + secondNumber;
             return result;
         }
+
+        static double SubstractNumbers(double firstNumber, double secondNumber)
+        {
+            double result = firstNumber - secondNumber;
+            return result;
+        }
+
+        static double MultiplicateNumbers(double firstNumber, double secondNumber)
+        {
+            double result = firstNumber + secondNumber;
+            return result;
+        }
+
+        static double DivideNumbers(double firstNumber, double secondNumber)
+        {
+            double result = firstNumber / secondNumber;
+            return result;
+        }
+
+        
+
+
             
 
 
