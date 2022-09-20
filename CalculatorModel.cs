@@ -8,31 +8,35 @@ namespace Calculator_Tutorial
 {
     class CalculatorModel
     {
-        public double Calculate(double firstNumberD, double secondNumberD, string enterOperator)
+        public double Result { get; private set; }
+        public CalculatorModel()
         {
-            double result = 0;
+            Result = 0;
+        }
+        public void Calculate(double firstNumberD, double secondNumberD, string enterOperator)
+        {
             switch (enterOperator)
             {
                 case "+":
-                    result = AddWithSum(firstNumberD, secondNumberD);
+                    Result = AddWithSum(firstNumberD, secondNumberD);
                     break;
 
                 case "-":
-                    result = SubtractNumbers(firstNumberD, secondNumberD);
+                    Result = SubtractNumbers(firstNumberD, secondNumberD);
                     break;
 
                 case "*":
-                    result = MultiplicateNumbers(firstNumberD, secondNumberD);
+                    Result = MultiplicateNumbers(firstNumberD, secondNumberD);
                     break;
 
                 case "/":
-                    result = DivideNumbers(firstNumberD, secondNumberD);
+                    Result = DivideNumbers(firstNumberD, secondNumberD);
                     break;
 
 
             }
 
-            return result;
+           
 
         }
 
