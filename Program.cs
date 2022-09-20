@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Calculator_Tutorial;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -33,7 +34,8 @@ namespace Calculator
 
 
             // calculates result of two numbers with different cases of operations
-            double result = calculation(firstNumberD, secondNumberD, enterOperator);
+            CalculatorModel model = new CalculatorModel();
+            double result = model.Calculate(firstNumberD, secondNumberD, enterOperator);
 
             // result Output
             ResultOutput(result, enterOperator);
@@ -45,41 +47,11 @@ namespace Calculator
 
 
         }
-
-        //add method for calculation here
-
-        static double calculation(double firstNumberD, double secondNumberD, string enterOperator)
-        {
-            double result = 0;
-            switch (enterOperator)
-            {
-                case "+":
-                    result = AddWithSum(firstNumberD, secondNumberD);
-                    break;
-
-                case "-":
-                    result = SubtractNumbers(firstNumberD, secondNumberD);
-                    break;
-
-                case "*":
-                    result = MultiplicateNumbers(firstNumberD, secondNumberD);
-                    break;
-
-                case "/":
-                    result = DivideNumbers(firstNumberD, secondNumberD);
-                    break;
-
-                
-            }
-
-            return result;
-
-        }
-        
-                
+           
+               
     //add mehtod for result output here
 
-    static void ResultOutput(double result, string enterOperator)
+        static void ResultOutput(double result, string enterOperator)
         {
             switch (enterOperator)
             {
@@ -105,11 +77,8 @@ namespace Calculator
                     break;
 
             }
-
         }
-
-
-
+     
         static string GetUserInput(string Consoletext)
         {
 
@@ -120,29 +89,7 @@ namespace Calculator
             return numberCalg;
         }
 
-        static double AddWithSum(double firstNumber, double secondNumber)
-        {
-            double result = firstNumber + secondNumber;
-            return result;
-        }
-
-        static double SubtractNumbers(double firstNumber, double secondNumber)
-        {
-            double result = firstNumber - secondNumber;
-            return result;
-        }
-
-        static double MultiplicateNumbers(double firstNumber, double secondNumber)
-        {
-            double result = firstNumber * secondNumber;
-            return result;
-        }
-
-        static double DivideNumbers(double firstNumber, double secondNumber)
-        {
-            double result = firstNumber / secondNumber;
-            return result;
-        }
+        
 
         
 
