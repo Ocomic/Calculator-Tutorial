@@ -19,22 +19,17 @@ namespace Calculator_Tutorial
 
         public void Execute()
         {
-            string firstNumber = view.GetUserNumber();
+            double firstNumber = view.GetUserNumber();
             string enterOperator = view.GetUserOperator();
-            string secondNumber = view.GetUserNumber();
-
-            // convert string to int for calculation
-            // TODO: create new method when code gets bigger.
-            double firstNumberD = Convert.ToDouble(firstNumber);
-            double secondNumberD = Convert.ToDouble(secondNumber);
-
+            double secondNumber = view.GetUserNumber();
+                               
 
             // calculates result of two numbers with different cases of operations
 
-            model.Calculate(firstNumberD, secondNumberD, enterOperator);
+            model.Calculate(firstNumber, secondNumber, enterOperator);
 
             // ConsoleView - Output
-            view.ResultOutput(enterOperator);
+            view.ResultOutput();
             view.WaitForUserClose();
         }
     }

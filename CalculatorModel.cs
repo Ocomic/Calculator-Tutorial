@@ -9,12 +9,16 @@ namespace Calculator_Tutorial
     class CalculatorModel
     {
         public double Result { get; private set; }
+        public string EnterOperator { get; private set; }
         public CalculatorModel()
         {
             Result = 0;
+            EnterOperator = "unknown";
         }
         public void Calculate(double firstNumberD, double secondNumberD, string enterOperator)
         {
+            this.EnterOperator = enterOperator;
+
             switch (enterOperator)
             {
                 case "+":

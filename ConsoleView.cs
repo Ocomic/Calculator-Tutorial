@@ -13,11 +13,13 @@ namespace Calculator_Tutorial
         {
             this.model = model;
         }
-        public string GetUserNumber()
+        public double GetUserNumber()
         {
+            string number;
+            Console.Write("Please enter a number: "); 
+            number = Console.ReadLine();
 
-            Console.Write("Please enter a number: ");           
-            return Console.ReadLine();
+            return Convert.ToDouble(number);
         }
 
         public string GetUserOperator()
@@ -34,9 +36,9 @@ namespace Calculator_Tutorial
             return Console.ReadLine();
         }
 
-        public void ResultOutput(string enterOperator)
+        public void ResultOutput()
         {
-            switch (enterOperator)
+            switch (model.EnterOperator)
             {
 
                 case "+":
