@@ -23,9 +23,9 @@ namespace Calculator
             CalculatorModel model = new CalculatorModel();
             ConsoleView view = new ConsoleView(model);
 
-            string firstNumber = view.GetUserInput("Please enter the first number: ");
-            string secondNumber = view.GetUserInput("Please enter the second number: ");
-            string enterOperator = view.GetUserInput("please enter an operator (+, -, * or /): ");
+            string firstNumber = view.GetUserNumber();
+            string enterOperator = view.GetUserOperator();
+            string secondNumber = view.GetUserNumber();
 
             // convert string to int for calculation
             // TODO: create new method when code gets bigger.
@@ -39,7 +39,7 @@ namespace Calculator
 
             // ConsoleView - Output
             view.ResultOutput(enterOperator);
-            view.GetUserInput("Press return to quit.");
+            view.WaitForUserClose();
 
 
 

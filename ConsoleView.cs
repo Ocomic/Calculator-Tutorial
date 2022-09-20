@@ -13,14 +13,25 @@ namespace Calculator_Tutorial
         {
             this.model = model;
         }
-        public string GetUserInput(string Consoletext)
+        public string GetUserNumber()
         {
 
-            Console.Write(Consoletext);
-            string numberCalg = Console.ReadLine();
+            Console.Write("Please enter a number: ");           
+            return Console.ReadLine();
+        }
 
+        public string GetUserOperator()
+        {
 
-            return numberCalg;
+            Console.Write("Please enter an operator (+, -, *, /: ");
+            return Console.ReadLine();
+        }
+
+        public string WaitForUserClose()
+        {
+
+            Console.Write("Press Return to end program.");
+            return Console.ReadLine();
         }
 
         public void ResultOutput(string enterOperator)
