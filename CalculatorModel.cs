@@ -9,32 +9,34 @@ namespace Calculator_Tutorial
     class CalculatorModel
     {
         public double Result { get; private set; }
-        public string EnterOperator { get; private set; }
+        public string EnterOperator { get; set; }
+        public double FirstNumber { get; set; }
+        public double SecondNumber { get; set; }
+
+
         public CalculatorModel()
         {
             Result = 0;
             EnterOperator = "unknown";
         }
-        public void Calculate(double firstNumberD, double secondNumberD, string enterOperator)
+        public void Calculate()
         {
-            this.EnterOperator = enterOperator;
-
-            switch (enterOperator)
+            switch (EnterOperator)
             {
                 case "+":
-                    Result = AddWithSum(firstNumberD, secondNumberD);
+                    Result = AddWithSum(FirstNumber, SecondNumber);
                     break;
 
                 case "-":
-                    Result = SubtractNumbers(firstNumberD, secondNumberD);
+                    Result = SubtractNumbers(FirstNumber, SecondNumber);
                     break;
 
                 case "*":
-                    Result = MultiplicateNumbers(firstNumberD, secondNumberD);
+                    Result = MultiplicateNumbers(FirstNumber, SecondNumber);
                     break;
 
                 case "/":
-                    Result = DivideNumbers(firstNumberD, secondNumberD);
+                    Result = DivideNumbers(FirstNumber, SecondNumber);
                     break;
 
 

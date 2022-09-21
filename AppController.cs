@@ -19,18 +19,26 @@ namespace Calculator_Tutorial
 
         public void Execute()
         {
-            double firstNumber = view.GetUserNumber();
-            string enterOperator = view.GetUserOperator();
-            double secondNumber = view.GetUserNumber();
-                               
+            view.GetFirstUserInput();
+            model.Calculate();
 
-            // calculates result of two numbers with different cases of operations
-
-            model.Calculate(firstNumber, secondNumber, enterOperator);
-
-            // ConsoleView - Output
             view.ResultOutput();
-            view.WaitForUserClose();
+            view.GetUserInputForCalculation();
+
+            while (!view.UserEndProgram)
+            {
+                // calculates result of two numbers with different cases of operations
+
+                model.Calculate();
+
+                // ConsoleView - Output
+                view.ResultOutput();
+
+                view.GetUserInputForCalculation();
+               
+            }
+            
+            
         }
     }
 }

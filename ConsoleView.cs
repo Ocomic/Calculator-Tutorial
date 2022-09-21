@@ -12,27 +12,51 @@ namespace Calculator_Tutorial
         public ConsoleView(CalculatorModel model)
         {
             this.model = model;
+            UserEndProgram = false;
         }
-        public double GetUserNumber()
+
+        public bool UserEndProgram { get; private set; }
+
+        public void GetFirstUserInput()
         {
-            string number;
-            Console.Write("Please enter a number: "); 
-            number = Console.ReadLine();
-
-            return Convert.ToDouble(number);
+            model.FirstNumber = GetUserNumber();
+            model.EnterOperator = GetUserOperator();
+            model.SecondNumber = GetUserNumber();
         }
 
-        public string GetUserOperator()
+        public void GetUserInputForCalculation()
+        {
+            string input = GetNextUserAction();
+
+            if (input == "Close")
+            {
+                UserEndProgram = true;
+            }
+            else
+            {
+                model.FirstNumber = model.Result;
+                model.SecondNumber = Convert.ToDouble(input);
+            }
+        }
+
+        private string GetNextUserAction()
+        {
+            Console.Write("Please enter a number or type Close to End program: ");
+            return Console.ReadLine();
+        }
+        private double GetUserNumber()
+        {
+            string input;
+            Console.Write("Please enter a number: "); 
+            input = Console.ReadLine();
+
+            return Convert.ToDouble(input);
+        }
+
+        private string GetUserOperator()
         {
 
             Console.Write("Please enter an operator (+, -, *, /: ");
-            return Console.ReadLine();
-        }
-
-        public string WaitForUserClose()
-        {
-
-            Console.Write("Press Return to end program.");
             return Console.ReadLine();
         }
 
