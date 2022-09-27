@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Calculator_Tutorial
 {
-    class CalculatorModel
+    public class CalculatorModel
     {
         public double Result { get; private set; }
         public string EnterOperator { get; set; }

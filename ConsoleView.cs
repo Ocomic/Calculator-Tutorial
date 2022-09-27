@@ -47,10 +47,18 @@ namespace Calculator_Tutorial
         private double GetUserNumber()
         {
             string input;
+            double number;
             Console.Write("Please enter a number: "); 
             input = Console.ReadLine();
 
-            return Convert.ToDouble(input);
+
+            while (!double.TryParse(input, out number))
+            {
+                Console.WriteLine("Error: Please enter a valid number. No letters allowed.");
+                input = Console.ReadLine();
+            }
+
+            return number;
         }
 
         private string GetUserOperator()

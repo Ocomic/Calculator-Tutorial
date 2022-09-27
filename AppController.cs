@@ -27,13 +27,8 @@ namespace Calculator_Tutorial
 
             while (!view.UserEndProgram)
             {
-                // calculates result of two numbers with different cases of operations
-
-                model.Calculate();
-
-                // ConsoleView - Output
+                model.Calculate();                
                 view.ResultOutput();
-
                 view.GetUserInputForCalculation();
                
             }
